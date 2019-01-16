@@ -1,0 +1,12 @@
+input, select {
+    height: 50px;
+    min-width: 100%;
+}
+
+span.required {
+    color: red;
+}
+
+.aux-alert {
+    border-color: red !important;
+}
