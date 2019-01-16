@@ -4,9 +4,9 @@
  *
  * Plugin Name: Auxlimpieza Booking
  * Description: Agenda y maneja los servicios para tus usuarios, pagos con PayU incluidos
- * Author: Frank Leal @lefrankleal
+ * Author: Frank Leal @lefrankleal falg2@hotmail.com
  * Author URI: https://stackoverflow.com/story/frankleal
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 defined('ABSPATH') or die('No hoes allowed');

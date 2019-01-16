@@ -5,8 +5,8 @@
     <a class="btn btn-primary" href="<?php echo admin_url('admin.php?page=aux-booking&option=download'); ?>">Descargar</a>
 </div>
 <div class="wrap">
-    <table class="table table-striped">
-        <thead class="thead-dark">
+    <table class="widefat striped fixed wp-list.table">
+        <thead>
             <tr>
                 <th scope="col">Ciudad</th>
                 <th scope="col">Dias</th>
@@ -37,8 +37,8 @@
                 <td><?php echo CURRENCY_SYMBOL . " " . number_format($key->total_price, 2) . " " . CURRENCY; ?></td>
                 <td><?php echo $key->transactionid; ?></td>
                 <td>
-                    <a class="btn btn-link badge badge-warning" href="<?php echo admin_url('admin.php?page=aux-booking&option=edit_booking&booking='.$key->id); ?>">Editar</a>
-                    <button type="button" class="btn btn-link badge badge-danger" name="delete" class="badge badge-danger" data-booking="<?php echo $key->id; ?>">Eliminar</button>
+                    <a class="button button-primary" href="<?php echo admin_url('admin.php?page=aux-booking&option=edit_booking&booking='.$key->id); ?>">Editar</a>
+                    <button type="button" class="button button-link-delete" name="delete" data-booking="<?php echo $key->id; ?>">Eliminar</button>
                 </td>
             </tr>
             <?php
