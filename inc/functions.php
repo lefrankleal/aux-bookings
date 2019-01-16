@@ -1,8 +1,6 @@
 <?php
 function init()
 {
-    wp_register_style('bootstrap-style', plugin_dir_url(__FILE__) . '../vendor/twbs/bootstrap/dist/css/bootstrap.min.css');
-    wp_register_script('bootstrap-script', plugin_dir_url(__FILE__) . '../vendor/twbs/bootstrap/dist/js/bootstrap.min.js');
 
     global $wpdb;
     $aux_booking_config = $wpdb->prefix . 'auxlimpieza_booking_config';
@@ -31,8 +29,6 @@ function init()
 
 function create_menu_entry()
 {
-    wp_enqueue_style('bootstrap-style');
-    wp_enqueue_script('bootstrap-script');
     add_menu_page('Auxlimpieza Booking Management', 'Auxlimpieza Booking', 'manage_options', 'aux-booking', 'aux_booking_admin', plugin_dir_url(__FILE__) . '../src/images/icon.png');
 }
 
@@ -58,9 +54,7 @@ function create_booking_form()
         ]
     );
     wp_enqueue_style('front-form-style');
-    wp_enqueue_style('bootstrap-style');
     wp_enqueue_script('front-form-script');
-    wp_enqueue_script('bootstrap-script');
     include_once plugin_dir_path(__FILE__) . '/front/index.php';
 }
 
@@ -85,9 +79,7 @@ function payu_payment_form()
     // $booking_data->tp = (int)($booking_data->tax + $booking_data->base_price);
 
     wp_enqueue_style('front-form-style');
-    wp_enqueue_style('bootstrap-style');
     wp_enqueue_script('front-form-script');
-    wp_enqueue_script('bootstrap-script');
     include_once plugin_dir_path(__FILE__) . '/front/payu_payment_form.php';
 }
 
@@ -111,9 +103,7 @@ function payu_payment_response_form()
         ]
     );
     wp_enqueue_style('front-form-style');
-    wp_enqueue_style('bootstrap-style');
     wp_enqueue_script('front-form-script');
-    wp_enqueue_script('bootstrap-script');
 
     $aux_booking = $wpdb->prefix . 'auxlimpieza_booking';
     $data['payu_response'] = json_encode($_REQUEST);
@@ -249,8 +239,6 @@ function getDiscount(&$post, $day, $discounts)
 
 function aux_booking_admin()
 {
-    wp_enqueue_style('bootstrap-style');
-    wp_enqueue_script('bootstrap-script');
     if (isset($_GET['option'])) {
         wp_enqueue_style('admin-form-' . $_GET['option'] . '-style');
         wp_enqueue_script('admin-form-' . $_GET['option'] . '-script');

@@ -1,9 +1,9 @@
-<div class="row">
-    <h2 class="col-12">Pide tu servicio</h2>
+<div class="column one">
+    <h2 class="column one">Pide tu servicio</h2>
 </div>
 <form method="post" id="auxlimpieza_booking" action="#">
-    <div class="row" id="first_step">
-        <div class="col-12 col-sm-6 col-md-4 mt-3">
+    <div id="first_step" class="column one">
+        <div class="column one-third">
             <label for="city">Ciudad: <span class="required">*</span></label>
             <select name="city" id="city" required>
                 <option value="">Seleccione una opción</option>
@@ -16,7 +16,7 @@
                 ?>
             </select>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 mt-3">
+        <div class="column one-third">
             <label for="days">Numero de dias: <span class="required">*</span></label>
             <select name="days" id="days" required>
                 <option value="">Seleccione una opción</option>
@@ -27,7 +27,7 @@
                 ?>
             </select>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 mt-3">
+        <div class="column one-third">
             <label for="hours">Numero de horas: <span class="required">*</span></label>
             <select name="hours" id="hours" required>
                 <option value="">Seleccione una opción</option>
@@ -41,20 +41,20 @@
             </select>
         </div>
     </div>
-    <div class="row" id="second_step">
-        <div class="col-12 col-sm-6 col-md-3 mt-3">
+    <div id="second_step" class="column one">
+        <div class="column one-fourth">
             <label for="name">Nombre: <span class="required">*</span></label>
             <input type="text" name="name" id="name" required>
         </div>
-        <div class="col-12 col-sm-6 col-md-3 mt-3">
+        <div class="column one-fourth">
             <label for="phone">Telefono: <span class="required">*</span></label>
             <input type="text" name="phone" id="phone" pattern="[\+]?[-0-9 ]+" required>
         </div>
-        <div class="col-12 col-sm-6 col-md-3 mt-3">
+        <div class="column one-fourth">
             <label for="email">Email: <span class="required">*</span></label>
             <input type="email" name="email" id="email" required pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
         </div>
-        <div class="col-12 col-sm-6 col-md-3 mt-3">
+        <div class="column one-fourth">
             <label for="meet">Como nos conoció:</label>
             <select name="meet" id="meet">
                 <option value="">Seleccione una opción</option>
@@ -68,15 +68,26 @@
             </select>
         </div>
     </div>
-    <div id="aux_booking_error_message" class="alert alert-warning" role="alert">
-        Por favor llene todos los campos requeridos
-    </div>
-    <div class="col-12" id="aux_booking_price_message">
-        <h3 class="col-12 text-center">Valor a pagar por suscripcion</h3>
-        <div id="price_label" class="alert alert-success text-center" role="alert"></div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12 mb-3 text-right">
+    <div class="column one">
+        <div id="aux_booking_error_message" class="alert alert_warning">
+            <div class="alert_icon">
+                <i class="icon-lamp"></i>
+            </div>
+            <div class="wrapper">
+                Por favor llene todos los campos requeridos
+            </div>
+        </div>
+        <div id="aux_booking_price_message" class="alert alert_success">
+            <div class="alert_icon">
+                <i class="icon-money-line"></i>
+            </div>
+            <div class="wrapper">
+                Valor a pagar por suscripcion
+                <div id="price_label"></div>
+            </div>
+            <h3 class="column text-center"></h3>
+        </div>
+        <div class="column one">
             <button id="next" type="button">Siguiente</button>
             <a class="btn btn-primary" id="payment">Pagar con PayU</a>
         </div>
