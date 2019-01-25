@@ -37,17 +37,19 @@ function validateStep() {
             }
             break;
         case 2:
+            var counter = 0;
             $("#auxlimpieza_booking #second_step [required]").each(function () {
                 $(this).removeClass('aux-alert');
                 switch ($(this).attr('name')) {
                     case 'name':
-                        if (/^[a-zA-Z ]{1,}$/.test($(this).val()) == false) {
+                        if (/^[a-zA-ZáéíóúÁÉÍÓÚ ]{1,}$/.test($(this).val()) == false) {
                             $(this).addClass('aux-alert');
                             $("#aux_booking_error_message").fadeIn("slow", function () {
                                 setTimeout(() => {
                                     $("#aux_booking_error_message").hide();
                                 }, 2000);
                             });
+                            counter++;
                         }
                         break;
                     case 'phone':
@@ -58,22 +60,25 @@ function validateStep() {
                                     $("#aux_booking_error_message").hide();
                                 }, 2000);
                             });
+                            counter++;
                         }
                         break;
                     case 'email':
-                        if (/^([a-zA-Z0-9]+)@([a-zA-Z]{2,})(\.)([a-z]{2,})$/.test($(this).val()) == false) {
+                        if (/^([a-zA-Z0-9\-\_\.]+)@([a-zA-Z\-\_\.]{2,})(\.)([a-z]{2,})$/.test($(this).val()) == false) {
                             $(this).addClass('aux-alert');
                             $("#aux_booking_error_message").fadeIn("slow", function () {
                                 setTimeout(() => {
                                     $("#aux_booking_error_message").hide();
                                 }, 2000);
                             });
-                        } else {
-                            save_booking();
+                            counter++;
                         }
                         break;
                 }
             });
+            if (counter == 0) {
+                save_booking();
+            }
             break;
         default:
             return false;
@@ -96,6 +101,8 @@ function save_booking() {
         success: function (res) {
             if (res.success && res.success == true) {
                 enable_payment(res);
+            } else {
+                alert("Ocurrió un error, por favor intenta de nuevo mas tarde");
             }
         }
     });

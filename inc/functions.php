@@ -24,6 +24,13 @@ function init()
     } else {
         wp_register_style('front-form-style', plugin_dir_url(__FILE__) . '../src/css/index.css');
         wp_register_script('front-form-script', plugin_dir_url(__FILE__) . '../src/js/index.js');
+        wp_localize_script(
+            'front-form-script',
+            'ajax_object',
+            [
+                'ajax_url' => admin_url('admin-ajax.php')
+            ]
+        );
     }
 }
 
