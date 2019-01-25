@@ -351,7 +351,7 @@ function auxlimpieza_booking_install()
             . "date DATE NOT NULL,"
             . "name VARCHAR(255) NOT NULL,"
             . "phone VARCHAR(20) NOT NULL,"
-            . "email VARCHAR(20) NOT NULL,"
+            . "email VARCHAR(100) NOT NULL,"
             . "meet VARCHAR(255) NULL,"
             . "discount_percentage VARCHAR(255) NOT NULL,"
             . "fraction_price VARCHAR(255) NOT NULL,"
